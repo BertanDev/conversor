@@ -3,15 +3,16 @@
 import { useState } from 'react'
 
 export default function Home() {
-  const [nfValue, setNfValue] = useState()
-  const [userValue, setUserValue] = useState()
+  const [nfValue, setNfValue] = useState('')
+  const [userValue, setUserValue] = useState('')
 
-  const [result, setResult] = useState()
+  const [result, setResult] = useState('')
 
   function calcResult() {
     const res1 = (userValue * 100) / nfValue
+    const formattedResult = (res1 / 100).toFixed(8).replace('.', ',')
 
-    setResult(res1 / 100)
+    setResult(formattedResult)
   }
 
   console.log(nfValue, userValue)
